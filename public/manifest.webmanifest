@@ -1,0 +1,21 @@
+{
+  "name": "MRI Plan",
+  "short_name": "MRI Plan",
+  "description": "Interactive MRI slice-planning simulator for MRI students and technologists.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#f7f5ef",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
