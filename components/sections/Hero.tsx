@@ -12,7 +12,7 @@ export function Hero() {
           <Reveal>
             <span className="hero-badge">Coming soon to the App Store</span>
           </Reveal>
-          <AnimatedHeading as="h1">Master MRI slice planning before it counts.</AnimatedHeading>
+          <AnimatedHeading as="h1">MRI slice planning before it counts.</AnimatedHeading>
           <Reveal delay={0.18}>
             <p>
             MRI Plan is an interactive simulator for practicing slice positioning, angling, and field-of-view decisions
