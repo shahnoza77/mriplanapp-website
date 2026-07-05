@@ -25,23 +25,23 @@ export const navigation: NavItem[] = [
 export const modules: Module[] = [
   {
     slug: "brain-planning",
-    title: "Brain Planning",
+    title: "Neuro MRI",
     eyebrow: "Core module",
     status: "In development",
     summary: "Practice foundational brain slice positioning with repeatable, feedback-led planning exercises.",
     description:
-      "Brain planning is being built as one of MRI Plan's first modules because it teaches the spatial decisions students repeatedly meet at the console: plane selection, center position, angulation, and coverage.",
+      " ",
     focus: ["Axial, sagittal, and coronal planning views", "Angle and center-position judgment", "Coverage and field-of-view decisions"],
     includes: ["Interactive prescription controls", "Anatomy-based reference views", "Immediate feedback on planning choices"],
   },
   {
     slug: "spine-planning",
-    title: "Spine Planning",
+    title: "Chest/Abdomen/Pelvis MRI",
     eyebrow: "Core module",
     status: "In development",
     summary: "Build confidence with spine planning decisions before working under clinical time pressure.",
     description:
-      "The spine module is planned for students and early-career technologists who need more low-stakes repetition with slice angulation and coverage across common spine scenarios.",
+      " ",
     focus: ["Plane alignment", "Coverage consistency", "Low-pressure repetition"],
     includes: ["Guided planning scenarios", "Slice positioning practice", "Clear adjustment feedback"],
   },
@@ -52,7 +52,7 @@ export const modules: Module[] = [
     status: "In development",
     summary: "Practice musculoskeletal planning fundamentals with anatomy-led reference views.",
     description:
-      "MSK planning is part of the first development group so learners can practice body-region planning beyond brain and spine workflows while staying inside an educational, privacy-first simulator.",
+      " ",
     focus: ["Musculoskeletal positioning", "Field-of-view decisions", "Repeatable learning sessions"],
     includes: ["Education-first anatomy references", "Touch-friendly slice controls", "Feedback for planning refinement"],
   },
