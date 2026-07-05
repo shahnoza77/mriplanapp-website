@@ -29,7 +29,6 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.34}>
             <ul className="hero-trust">
-              <li>Practicing technologist-led</li>
               <li>Classroom-ready direction</li>
               <li>No patient data collected</li>
             </ul>
