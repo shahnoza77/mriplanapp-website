@@ -88,7 +88,7 @@ export const features = [
 export const processSteps = [
   {
     title: "Choose an exam",
-    text: "Open &#34 How to Use a Planner &#34 (?) and follow the step-by-step planning instructions provided throughout the exam/protocol.",
+    text: "Open: How to Use a Planner(?) and follow the step-by-step planning instructions provided throughout the exam/protocol.",
   },
   {
     title: "Plan the slices",
