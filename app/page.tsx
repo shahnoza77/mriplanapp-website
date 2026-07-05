@@ -27,7 +27,6 @@ export default function HomePage() {
       <Hero />
       <TrustStrip />
       <FeatureGrid />
-      <ModuleShowcase />
       <section className="section why-section">
         <div className="container split-layout">
           <div className="section-heading">
