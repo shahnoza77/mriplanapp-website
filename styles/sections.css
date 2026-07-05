@@ -228,7 +228,8 @@
     transform var(--duration-base) var(--ease),
     border-color var(--duration-base) var(--ease),
     box-shadow var(--duration-base) var(--ease),
-    background var(--duration-base) var(--ease);
+    background var(--duration-base) var(--ease),
+    color var(--duration-base) var(--ease);
 }
 
 .feature-card::after {
@@ -246,17 +247,23 @@
 }
 
 .feature-card:hover {
-  border-color: rgba(28, 140, 255, 0.24);
+  border-color: rgba(28, 140, 255, 0.32);
   box-shadow: var(--shadow-deep);
   transform: translateY(var(--hover-distance));
   background:
-    linear-gradient(150deg, rgba(255, 255, 255, 0.86), rgba(224, 242, 255, 0.62)),
-    radial-gradient(circle at 100% 0%, rgba(28, 140, 255, 0.22), transparent 15rem);
+    linear-gradient(150deg, rgba(31, 41, 51, 0.97), rgba(44, 97, 161, 0.94)),
+    radial-gradient(circle at 100% 0%, rgba(28, 140, 255, 0.35), transparent 15rem);
+  color: white;
 }
 
 .feature-card:hover::after {
   transform: scale(1.22) translate(-0.15rem, -0.15rem);
-  border-color: rgba(28, 140, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.feature-card:hover p,
+.feature-card:hover span {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .feature-card span {
@@ -264,6 +271,7 @@
   display: block;
   font-weight: 900;
   margin-bottom: var(--space-5);
+  transition: color var(--duration-base) var(--ease);
 }
 
 .feature-card h3 {
@@ -274,6 +282,7 @@
 .feature-card p {
   color: var(--color-text-soft);
   margin-top: auto;
+  transition: color var(--duration-base) var(--ease);
 }
 
 .module-list {
