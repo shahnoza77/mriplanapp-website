@@ -25,23 +25,23 @@ export const navigation: NavItem[] = [
 export const modules: Module[] = [
   {
     slug: "brain-planning",
-    title: "Brain Planning",
+    title: "Neuro MRI",
     eyebrow: "Core module",
     status: "In development",
-    summary: "Practice foundational brain slice positioning with repeatable, feedback-led planning exercises.",
+    summary: "",
     description:
-      "Brain planning is being built as one of MRI Plan's first modules because it teaches the spatial decisions students repeatedly meet at the console: plane selection, center position, angulation, and coverage.",
+      " ",
     focus: ["Axial, sagittal, and coronal planning views", "Angle and center-position judgment", "Coverage and field-of-view decisions"],
     includes: ["Interactive prescription controls", "Anatomy-based reference views", "Immediate feedback on planning choices"],
   },
   {
     slug: "spine-planning",
-    title: "Spine Planning",
+    title: "Chest/Abd/Pelvis MRI",
     eyebrow: "Core module",
     status: "In development",
-    summary: "Build confidence with spine planning decisions before working under clinical time pressure.",
+    summary: " ",
     description:
-      "The spine module is planned for students and early-career technologists who need more low-stakes repetition with slice angulation and coverage across common spine scenarios.",
+      " ",
     focus: ["Plane alignment", "Coverage consistency", "Low-pressure repetition"],
     includes: ["Guided planning scenarios", "Slice positioning practice", "Clear adjustment feedback"],
   },
@@ -50,9 +50,9 @@ export const modules: Module[] = [
     title: "MSK Planning",
     eyebrow: "Core module",
     status: "In development",
-    summary: "Practice musculoskeletal planning fundamentals with anatomy-led reference views.",
+    summary: " ",
     description:
-      "MSK planning is part of the first development group so learners can practice body-region planning beyond brain and spine workflows while staying inside an educational, privacy-first simulator.",
+      " ",
     focus: ["Musculoskeletal positioning", "Field-of-view decisions", "Repeatable learning sessions"],
     includes: ["Education-first anatomy references", "Touch-friendly slice controls", "Feedback for planning refinement"],
   },
@@ -69,7 +69,7 @@ export const features = [
   },
   {
     title: "Instant feedback",
-    text: "Review angle, coverage, center position, and field-of-view guidance immediately after planning.",
+    text: "Interactive planning hints and notes. Review angle, coverage, center position, and field-of-view guidance immediately after planning.",
   },
   {
     title: "Built for learning",
@@ -87,28 +87,28 @@ export const features = [
 
 export const processSteps = [
   {
-    title: "Choose a module",
-    text: "Start with brain, spine, or MSK planning based on what you are studying.",
+    title: "Choose an exam",
+    text: "Open: How to Use a Planner(?) and follow the step-by-step planning instructions provided throughout the exam/protocol.",
   },
   {
     title: "Plan the slices",
     text: "Set position, angle, center, and coverage using touch-friendly planning controls.",
   },
   {
-    title: "Review feedback",
-    text: "Compare your prescription against the target planning decisions and adjust with purpose.",
+    title: "Use Hints and Notes",
+    text: "Learn correct slice positioning, angle, and coverage with hints and teaching notes.",
   },
   {
     title: "Repeat with confidence",
-    text: "Run the scenario again until the spatial relationships start to feel natural.",
+    text: "Repeat the scenario until you can confidently plan slices in all planes.",
   },
 ];
 
 export const trustMetrics = [
-  { value: "3", label: "Core planning modules in development" },
+  { value: "17", label: "Core planning modules in development" },
   { value: "0", label: "Patient records or PHI collected" },
   { value: "iOS", label: "First platform in development" },
-  { value: "A/S/C", label: "Axial, sagittal, and coronal planning views" },
+  { value: "7", label: "Languages supported" },
 ];
 
 export const faqItems: FaqItem[] = [

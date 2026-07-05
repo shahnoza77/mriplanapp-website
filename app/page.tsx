@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Accordion } from "@/components/ui/Accordion";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { Hero } from "@/components/sections/Hero";
-import { ModuleShowcase } from "@/components/sections/ModuleShowcase";
 import { Process } from "@/components/sections/Process";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { faqItems, site } from "@/data/content";
@@ -28,7 +27,6 @@ export default function HomePage() {
       <Hero />
       <TrustStrip />
       <FeatureGrid />
-      <ModuleShowcase />
       <section className="section why-section">
         <div className="container split-layout">
           <div className="section-heading">

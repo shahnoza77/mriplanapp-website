@@ -31,16 +31,7 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
-          <div>
-            <h3>Modules</h3>
-            <ul>
-              {modules.map((module) => (
-                <li key={module.slug}>
-                  <Link href={`/modules/${module.slug}`}>{module.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
           <div>
             <h3>Contact</h3>
             <ul>

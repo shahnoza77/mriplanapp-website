@@ -12,7 +12,7 @@ export function Hero() {
           <Reveal>
             <span className="hero-badge">Coming soon to the App Store</span>
           </Reveal>
-          <AnimatedHeading as="h1">Master MRI slice planning before it counts.</AnimatedHeading>
+          <AnimatedHeading as="h1">MRI slice planning before it counts.</AnimatedHeading>
           <Reveal delay={0.18}>
             <p>
             MRI Plan is an interactive simulator for practicing slice positioning, angling, and field-of-view decisions
@@ -29,7 +29,6 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.34}>
             <ul className="hero-trust">
-              <li>Practicing technologist-led</li>
               <li>Classroom-ready direction</li>
               <li>No patient data collected</li>
             </ul>

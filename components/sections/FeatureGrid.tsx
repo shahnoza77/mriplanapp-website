@@ -1,4 +1,5 @@
 import { features } from "@/data/content";
+import { FeatureCard } from "@/components/sections/FeatureCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
@@ -16,11 +17,12 @@ export function FeatureGrid({ heading = true }: { heading?: boolean }) {
         ) : null}
         <StaggerGroup className="feature-grid">
           {features.map((feature, index) => (
-            <article className="feature-card" key={feature.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.text}</p>
-            </article>
+            <FeatureCard
+              key={feature.title}
+              index={index}
+              title={feature.title}
+              text={feature.text}
+            />
           ))}
         </StaggerGroup>
       </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
-import { ModuleShowcase } from "@/components/sections/ModuleShowcase";
+
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ModuleVisual } from "@/components/ui/ModuleVisual";
 
@@ -27,7 +27,6 @@ export default function FeaturesPage() {
         </div>
       </section>
       <FeatureGrid heading={false} />
-      <ModuleShowcase />
       <section className="section">
         <div className="container" style={{ maxWidth: "850px" }}>
           <div className="card">
