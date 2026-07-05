@@ -27,7 +27,6 @@ export default function FeaturesPage() {
         </div>
       </section>
       <FeatureGrid heading={false} />
-      <ModuleShowcase />
       <section className="section">
         <div className="container" style={{ maxWidth: "850px" }}>
           <div className="card">
