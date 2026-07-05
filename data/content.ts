@@ -95,8 +95,8 @@ export const processSteps = [
     text: "Set position, angle, center, and coverage using touch-friendly planning controls.",
   },
   {
-    title: "Review feedback",
-    text: "Compare your prescription against the target planning decisions and adjust with purpose.",
+    title: "Use Hints and Notes",
+    text: "Learn correct slice positioning, angle, and coverage with hints and teaching notes.",
   },
   {
     title: "Repeat with confidence",
