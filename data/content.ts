@@ -69,7 +69,7 @@ export const features = [
   },
   {
     title: "Instant feedback",
-    text: "Review angle, coverage, center position, and field-of-view guidance immediately after planning.",
+    text: "Interactive planning hints and notes. Review angle, coverage, center position, and field-of-view guidance immediately after planning.",
   },
   {
     title: "Built for learning",
