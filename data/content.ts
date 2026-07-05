@@ -108,6 +108,7 @@ export const trustMetrics = [
   { value: "17", label: "Core planning modules in development" },
   { value: "0", label: "Patient records or PHI collected" },
   { value: "iOS", label: "First platform in development" },
+  { value: "7", label: "Languages supported" },
 ];
 
 export const faqItems: FaqItem[] = [
