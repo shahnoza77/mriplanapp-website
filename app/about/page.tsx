@@ -17,7 +17,7 @@ export default function AboutPage() {
           <Breadcrumbs current="About" />
           <Reveal>
             <h1>Built by someone who plans MRI scans every day</h1>
-            <p>MRI Plan started with a simple question: why do MRI students get so little low-stakes planning repetition?</p>
+            <p>MRI Plan is designed for MRI students and technologists who already understand MRI physics and cross-sectional anatomy. Its purpose is to develop slice planning skills through interactive practice. The app does not teach MRI physics, anatomy, or identify anatomical structures—it is focused solely on MRI planning techniques.</p>
           </Reveal>
         </div>
       </section>
