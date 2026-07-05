@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Accordion } from "@/components/ui/Accordion";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { Hero } from "@/components/sections/Hero";
-import { ModuleShowcase } from "@/components/sections/ModuleShowcase";
 import { Process } from "@/components/sections/Process";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { faqItems, site } from "@/data/content";
