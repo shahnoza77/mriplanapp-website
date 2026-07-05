@@ -100,7 +100,7 @@ export const processSteps = [
   },
   {
     title: "Repeat with confidence",
-    text: "Run the scenario again until the spatial relationships start to feel natural.",
+    text: "Repeat the scenario until you can confidently plan slices in all planes.",
   },
 ];
 
