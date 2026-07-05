@@ -28,7 +28,7 @@ export const modules: Module[] = [
     title: "Neuro MRI",
     eyebrow: "Core module",
     status: "In development",
-    summary: "Practice foundational brain slice positioning with repeatable, feedback-led planning exercises.",
+    summary: "",
     description:
       " ",
     focus: ["Axial, sagittal, and coronal planning views", "Angle and center-position judgment", "Coverage and field-of-view decisions"],
@@ -36,10 +36,10 @@ export const modules: Module[] = [
   },
   {
     slug: "spine-planning",
-    title: "Chest/Abdomen/Pelvis MRI",
+    title: "Chest/Abd/Pelvis MRI",
     eyebrow: "Core module",
     status: "In development",
-    summary: "Build confidence with spine planning decisions before working under clinical time pressure.",
+    summary: " ",
     description:
       " ",
     focus: ["Plane alignment", "Coverage consistency", "Low-pressure repetition"],
@@ -50,7 +50,7 @@ export const modules: Module[] = [
     title: "MSK Planning",
     eyebrow: "Core module",
     status: "In development",
-    summary: "Practice musculoskeletal planning fundamentals with anatomy-led reference views.",
+    summary: " ",
     description:
       " ",
     focus: ["Musculoskeletal positioning", "Field-of-view decisions", "Repeatable learning sessions"],
