@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
-import { ModuleShowcase } from "@/components/sections/ModuleShowcase";
+
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ModuleVisual } from "@/components/ui/ModuleVisual";
 
