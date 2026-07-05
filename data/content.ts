@@ -105,10 +105,9 @@ export const processSteps = [
 ];
 
 export const trustMetrics = [
-  { value: "3", label: "Core planning modules in development" },
+  { value: "17", label: "Core planning modules in development" },
   { value: "0", label: "Patient records or PHI collected" },
   { value: "iOS", label: "First platform in development" },
-  { value: "A/S/C", label: "Axial, sagittal, and coronal planning views" },
 ];
 
 export const faqItems: FaqItem[] = [
