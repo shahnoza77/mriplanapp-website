@@ -87,8 +87,8 @@ export const features = [
 
 export const processSteps = [
   {
-    title: "Choose a module",
-    text: "Start with brain, spine, or MSK planning based on what you are studying.",
+    title: "Choose an exam",
+    text: "Open "How to Use a Planner" (?) and follow the step-by-step planning instructions provided throughout the exam/protocol.",
   },
   {
     title: "Plan the slices",
