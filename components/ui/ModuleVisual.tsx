@@ -2,7 +2,7 @@ export function ModuleVisual({ label = "Planning view", showImage = false }: { l
   if (showImage) {
     return (
       <img
-        src="/images/mri-plan-home-screen.jpeg"
+        src="/images/Mri_home_phone.jpg"
         alt="MRI Plan mobile app Home screen showing course progress and recent exam"
         className="module-visual module-visual--image"
       />
