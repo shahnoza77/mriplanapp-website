@@ -36,14 +36,8 @@ export function Hero() {
         </div>
         <div className="hero-visual">
           <div className="hero-device-wrap">
-            <ModuleVisual label="Brain planning view" />
+            <ModuleVisual label="Brain planning view" showImage={true} />
           </div>
-          <Reveal delay={0.45}>
-            <aside className="hero-floating-card glass">
-              <span>Planning feedback</span>
-              <strong>Coverage, angle, and field of view in one practice loop.</strong>
-            </aside>
-          </Reveal>
         </div>
       </div>
     </section>

@@ -1,4 +1,14 @@
-export function ModuleVisual({ label = "Planning view" }: { label?: string }) {
+export function ModuleVisual({ label = "Planning view", showImage = false }: { label?: string; showImage?: boolean }) {
+  if (showImage) {
+    return (
+      <img
+        src="/images/mri-plan-home-screen.jpeg"
+        alt="MRI Plan mobile app Home screen showing course progress and recent exam"
+        className="module-visual module-visual--image"
+      />
+    );
+  }
+
   return (
     <div className="module-visual" aria-label={label}>
       <div className="module-visual__toolbar">

@@ -558,6 +558,7 @@
   box-shadow: var(--shadow-deep), var(--shadow-glow);
   padding: 0.85rem;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .module-visual::before {
@@ -592,6 +593,25 @@
   background:
     radial-gradient(circle at 50% 42%, rgba(28, 140, 255, 0.16), transparent 30%),
     linear-gradient(155deg, #fbfdff, #dbeafe);
+}
+
+.module-visual__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.module-visual--image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .scan-grid {
@@ -681,6 +701,16 @@
   background: rgba(255, 255, 255, 0.7);
   padding: 1rem;
   backdrop-filter: blur(14px);
+}
+
+.module-visual__label strong,
+.module-visual__label span {
+  display: block;
+}
+
+.module-visual__label span {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
 }
 
 .module-visual__readout {
