@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { site } from "@/data/content";
+import { EmailConfirmedClient } from "./EmailConfirmedClient";
 
 export const metadata: Metadata = {
   title: "Email confirmed",
@@ -20,9 +19,7 @@ export default function EmailConfirmedPage() {
             <h1>Your email has been verified</h1>
             <p>Your MRI Plan account is now confirmed. You can return to the MRI Plan app and sign in.</p>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button href={site.url}>Go to MRI Plan</Button>
-          </div>
+          <EmailConfirmedClient />
         </Reveal>
       </div>
     </section>
