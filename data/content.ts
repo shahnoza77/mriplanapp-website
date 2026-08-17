@@ -61,7 +61,7 @@ export const modules: Module[] = [
 export const features = [
   {
     title: "Interactive slice planning",
-    text: "Position and angle slices across axial, sagittal, and coronal views with direct manipulation controls that mirror the mental model used at the console.",
+    text: "Review clear planning guidance in Teaching Notes before you begin, then apply what you’ve learned by positioning and angling slices across axial, sagittal, and coronal views.",
   },
   {
     title: "Realistic anatomy references",
@@ -95,8 +95,8 @@ export const processSteps = [
     text: "Set position, angle, center, and coverage using touch-friendly planning controls.",
   },
   {
-    title: "Use Hints and Notes",
-    text: "Learn correct slice positioning, angle, and coverage with hints and teaching notes.",
+    title: "Use Teaching Notes",
+    text: "Learn correct slice positioning, angulation, coverage, and field-of-view sizing with Teaching Notes.",
   },
   {
     title: "Repeat with confidence",
