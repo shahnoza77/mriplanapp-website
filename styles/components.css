@@ -614,6 +614,19 @@
   padding: 0;
 }
 
+.phone-visual {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: clamp(430px, 52vw, 620px);
+  place-items: center;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.phone-visual__image {
+  object-fit: contain !important;
+}
+
 .scan-grid {
   position: absolute;
   inset: 0;
@@ -957,6 +970,12 @@
 }
 
 @media (max-width: 640px) {
+  .phone-visual {
+    height: min(128vw, 560px);
+    min-height: 400px;
+    padding: 0.75rem;
+  }
+
   .site-header {
     padding-inline: 0.65rem;
   }

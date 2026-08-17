@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { ModuleVisual } from "@/components/ui/ModuleVisual";
+import { PhoneVisual } from "@/components/ui/PhoneVisual";
 import { modules, site } from "@/data/content";
 
 type ModulePageProps = {
   params: Promise<{ slug: string }>;
+};
+
+const moduleImages: Record<string, { src: string; alt: string }> = {
+  "brain-planning": { src: "/images/neuro-mri-phone.png", alt: "MRI Plan Neuro MRI axial planning result on iPhone" },
+  "msk-planning": { src: "/images/msk-planning-phone.png", alt: "MRI Plan MSK knee sagittal planning result on iPhone" },
+  "spine-planning": { src: "/images/abdomen-mri-phone.png", alt: "MRI Plan abdomen coronal planning result on iPhone" },
 };
 
 export async function generateStaticParams() {
@@ -29,6 +35,7 @@ export default async function ModulePage({ params }: ModulePageProps) {
   const { slug } = await params;
   const planningModule = modules.find((item) => item.slug === slug);
   if (!planningModule) notFound();
+  const moduleImage = moduleImages[planningModule.slug];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -49,11 +56,11 @@ export default async function ModulePage({ params }: ModulePageProps) {
         <div className="container split-layout">
           <div>
             <Breadcrumbs current={planningModule.title} parent={{ label: "Features", href: "/features" }} />
-            <span className="eyebrow">{planningModule.status}</span>
+            <span className="eyebrow">{planningModule.eyebrow}</span>
             <h1>{planningModule.title}</h1>
             <p>{planningModule.description}</p>
           </div>
-          <ModuleVisual label={planningModule.title} />
+          <PhoneVisual src={moduleImage.src} alt={moduleImage.alt} priority />
         </div>
       </section>
       <section className="section">

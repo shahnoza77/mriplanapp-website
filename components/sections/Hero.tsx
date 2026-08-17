@@ -21,7 +21,6 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.26}>
             <div className="hero-actions">
-              <Button href="/launch">Get notified at launch</Button>
               <Button href="/features" variant="secondary">
                 Explore features
               </Button>

@@ -287,7 +287,8 @@
 
 .module-list {
   display: grid;
-  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.35rem);
 }
 
 .module-showcase {
@@ -304,41 +305,65 @@
   font-size: clamp(1.9rem, 3.2vw, 2.75rem);
 }
 
-.module-row {
+.module-card {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(7rem, 0.7fr) minmax(12rem, 1fr) minmax(16rem, 1.8fr) auto;
-  gap: clamp(0.8rem, 2vw, 1.35rem);
-  align-items: center;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
   border: 1px solid var(--color-border);
   border-radius: 1.35rem;
   background: rgba(255, 255, 255, 0.62);
-  padding: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 1.4rem);
   overflow: hidden;
   text-decoration: none;
   transition: transform var(--duration-base) var(--ease), background var(--duration-base) var(--ease), box-shadow var(--duration-base) var(--ease);
 }
 
-.module-row:hover {
+.module-card:hover {
   box-shadow: var(--shadow-deep);
   transform: translateY(var(--hover-distance));
   background: rgba(255, 255, 255, 0.84);
 }
 
-.module-row span,
-.module-row em {
-  color: var(--color-text-muted);
-  font-style: normal;
-  font-size: 0.9rem;
-  font-weight: 800;
+.module-card .phone-visual {
+  height: clamp(390px, 43vw, 560px);
+  padding: 0.5rem;
 }
 
-.module-row strong {
-  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+.module-card__content {
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+  padding: clamp(1rem, 2vw, 1.35rem) 0.25rem 0.15rem;
 }
 
-.module-row p {
+.module-card__content h3 {
+  margin-top: 0.55rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+}
+
+.module-card__focus {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.module-card__focus li {
+  position: relative;
   color: var(--color-text-soft);
+  line-height: 1.45;
+  padding-left: 1rem;
+}
+
+.module-card__focus li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 .process-section::before {
@@ -610,12 +635,42 @@
     grid-column: auto;
   }
 
-  .module-row {
+  .module-list {
     grid-template-columns: 1fr;
+  }
+
+  .module-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .module-card .phone-visual {
+    height: 430px;
+  }
+
+  .module-card__content {
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
+    padding: 1rem 1.25rem;
   }
 }
 
 @media (max-width: 620px) {
+  .module-card {
+    display: flex;
+  }
+
+  .module-card .phone-visual {
+    height: min(125vw, 540px);
+  }
+
+  .module-card__content {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+    padding: 1rem 0.25rem 0.15rem;
+  }
+
   .hero {
     padding: 6.5rem 0 3.5rem;
   }

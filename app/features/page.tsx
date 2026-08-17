@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { ModuleVisual } from "@/components/ui/ModuleVisual";
+import { PhoneVisual } from "@/components/ui/PhoneVisual";
 
 export const metadata: Metadata = {
   title: "Features",
@@ -23,7 +23,7 @@ export default function FeaturesPage() {
               and field of view.
             </p>
           </div>
-          <ModuleVisual label="Interactive planning controls" />
+          <PhoneVisual src="/images/feature-mri-phone.png" alt="MRI Plan exam and body-region categories on iPhone" priority />
         </div>
       </section>
       <FeatureGrid heading={false} />
