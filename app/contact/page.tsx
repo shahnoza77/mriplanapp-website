@@ -40,10 +40,6 @@ export default function ContactPage() {
               <h3>Response time</h3>
               <p>MRI Plan is currently a small, early-stage project. Expect a personal reply, typically within a few business days.</p>
             </article>
-            <article>
-              <h3>Form integration</h3>
-              <p>Online form delivery is prepared through NEXT_PUBLIC_CONTACT_FORM_ENDPOINT. Until connected, visitors are directed to email.</p>
-            </article>
           </StaggerGroup>
         </div>
       </section>

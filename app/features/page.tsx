@@ -23,7 +23,11 @@ export default function FeaturesPage() {
               and field of view.
             </p>
           </div>
-          <PhoneVisual src="/images/feature-mri-phone.png" alt="MRI Plan exam and body-region categories on iPhone" priority />
+          <PhoneVisual
+            src="/images/feature-mri-phone-transparent.png"
+            alt="MRI Plan exam and body-region categories on iPhone"
+            priority
+          />
         </div>
       </section>
       <FeatureGrid heading={false} />

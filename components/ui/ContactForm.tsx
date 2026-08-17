@@ -1,25 +1,23 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { contactTopics, site } from "@/data/content";
 import { Button } from "@/components/ui/Button";
 
 type Status = "idle" | "error" | "loading" | "success";
 
-const formEndpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT ?? "";
-
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const hasEndpoint = useMemo(() => formEndpoint.length > 0, []);
+  const submittingRef = useRef(false);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submittingRef.current) return;
+
     const form = event.currentTarget;
     const data = new FormData(form);
-
-    if (String(data.get("company") ?? "")) return;
 
     const nextErrors: Record<string, string> = {};
     const name = String(data.get("name") ?? "").trim();
@@ -39,29 +37,32 @@ export function ContactForm() {
       return;
     }
 
-    if (!hasEndpoint) {
-      setStatus("error");
-      setMessage(`Online submission is not connected yet. Please email ${site.email} directly.`);
-      return;
-    }
-
+    submittingRef.current = true;
     setStatus("loading");
     setMessage("Sending your message...");
 
     try {
-      const response = await fetch(formEndpoint, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.fromEntries(data.entries())),
+        body: JSON.stringify({
+          ...Object.fromEntries(data.entries()),
+          submissionId: crypto.randomUUID(),
+        }),
       });
 
-      if (!response.ok) throw new Error("Form submission failed");
+      const result = (await response.json().catch(() => null)) as { ok?: boolean } | null;
+      if (!response.ok || result?.ok !== true) throw new Error("Form submission failed");
+
       form.reset();
+      setErrors({});
       setStatus("success");
-      setMessage("Thanks. Your message has been sent.");
+      setMessage("Thanks for reaching out. Your message has been sent.");
     } catch {
       setStatus("error");
-      setMessage(`Something went wrong. Please email ${site.email} directly.`);
+      setMessage(`We couldn’t send your message right now. Please try again, or email ${site.email}.`);
+    } finally {
+      submittingRef.current = false;
     }
   }
 
@@ -79,12 +80,12 @@ export function ContactForm() {
       ) : null}
 
       <Field id="name" label="Full name" error={errors.name}>
-        <input id="name" name="name" autoComplete="name" />
+        <input id="name" name="name" autoComplete="name" maxLength={100} />
       </Field>
 
       <div className="form-grid">
         <Field id="email" label="Email address" error={errors.email}>
-          <input id="email" name="email" type="email" autoComplete="email" />
+          <input id="email" name="email" type="email" autoComplete="email" maxLength={254} />
         </Field>
         <Field id="topic" label="Topic" error={errors.topic}>
           <select id="topic" name="topic" defaultValue="">
@@ -101,7 +102,7 @@ export function ContactForm() {
       </div>
 
       <Field id="message" label="Message" error={errors.message} hint="Minimum 10 characters. No need for formality.">
-        <textarea id="message" name="message" rows={6} />
+        <textarea id="message" name="message" rows={6} maxLength={5000} />
       </Field>
 
       <Button full type="submit" disabled={status === "loading"}>

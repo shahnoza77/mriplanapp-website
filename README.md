@@ -62,13 +62,13 @@ vercel
 
 ## Environment Variables
 
-The contact and launch forms are prepared for a JSON form endpoint.
+The Contact form sends email through a server-only App Router endpoint and Resend.
 
 ```bash
-NEXT_PUBLIC_CONTACT_FORM_ENDPOINT=
+RESEND_API_KEY=
 ```
 
-Until that variable is set, the form validates input but does not fake a successful submission. Visitors are directed to email `contact@mriplanapp.com`.
+Configure this secret in Vercel for each environment that should send email. Never expose it through a `NEXT_PUBLIC_` variable.
 
 ## Content Updates
 
