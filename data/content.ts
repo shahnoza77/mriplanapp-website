@@ -91,12 +91,12 @@ export const processSteps = [
     text: "Open: How to Use a Planner(?) and follow the step-by-step planning instructions provided throughout the exam/protocol.",
   },
   {
-    title: "Plan the slices",
-    text: "Set position, angle, center, and coverage using touch-friendly planning controls.",
-  },
-  {
     title: "Use Teaching Notes",
     text: "Learn correct slice positioning, angulation, coverage, and field-of-view sizing with Teaching Notes.",
+  },
+  {
+    title: "Plan the slices",
+    text: "Set position, angle, center, and coverage using touch-friendly planning controls.",
   },
   {
     title: "Repeat with confidence",
