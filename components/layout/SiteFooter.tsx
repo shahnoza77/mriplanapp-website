@@ -1,21 +1,11 @@
 import Link from "next/link";
-import { modules, navigation, site } from "@/data/content";
-import { Button } from "@/components/ui/Button";
+import { navigation, site } from "@/data/content";
 import { Logo } from "@/components/ui/Logo";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container">
-        <div className="footer-cta glass">
-          <div>
-            <span className="eyebrow">Launch updates</span>
-            <h2>Be first to know when MRI Plan is available.</h2>
-            <p>Leave a note and we will notify you when the app is ready for students, instructors, and early supporters.</p>
-          </div>
-          <Button href="/launch">Get Notified</Button>
-        </div>
-
         <div className="footer-grid">
           <div>
             <Logo dark />

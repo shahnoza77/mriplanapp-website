@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { modules, navigation } from "@/data/content";
-import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { motionConfig } from "@/lib/motion";
 
@@ -173,9 +172,6 @@ export function SiteHeader() {
           </nav>
 
           <div className="header-actions">
-            <Button href="/launch" variant="glass" className="header-cta">
-              Get Notified
-            </Button>
             <button
               ref={toggleRef}
               className={`burger${menuOpen ? " open" : ""}`}
@@ -268,11 +264,6 @@ export function SiteHeader() {
                   </motion.div>
                 ))}
               </nav>
-              <div className="mobile-menu__footer">
-                <Button href="/launch" full>
-                  Get Notified
-                </Button>
-              </div>
             </motion.div>
           </motion.div>
         ) : null}

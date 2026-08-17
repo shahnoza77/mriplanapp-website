@@ -130,22 +130,22 @@ export const faqItems: FaqItem[] = [
   {
     question: "What planning modules are included?",
     answer:
-      "Development is starting with brain planning, spine planning, and MSK planning. Additional modules may be added after launch based on feedback from students and instructors.",
+      "MRI Plan includes brain planning, spine planning, and MSK planning. Additional modules may be added based on feedback from students and instructors.",
   },
   {
     question: "When will MRI Plan be available?",
     answer:
-      "MRI Plan is currently in development and not yet available on the App Store. You can leave your email through the contact page to be notified when it launches.",
+      "MRI Plan availability details will be published on this website.",
   },
   {
     question: "Which platforms will MRI Plan support?",
     answer:
-      "MRI Plan is being built for iOS first, with Android support planned. Exact platform availability at launch will be confirmed closer to release.",
+      "MRI Plan is being built for iOS first, with Android support planned. Current platform availability will be listed on this website.",
   },
   {
     question: "Will MRI Plan be free?",
     answer:
-      "Pricing has not been finalized yet. Details on free access, one-time pricing, or a subscription model will be announced ahead of launch.",
+      "Pricing has not been finalized yet. Details on free access, one-time pricing, or a subscription model will be published on this website.",
   },
   {
     question: "Who built MRI Plan?",
@@ -159,7 +159,6 @@ export const faqItems: FaqItem[] = [
 ];
 
 export const contactTopics: ContactTopic[] = [
-  { value: "launch-notify", label: "Notify me at launch" },
   { value: "general-question", label: "General question" },
   { value: "feedback", label: "Feedback or suggestion" },
   { value: "press", label: "Press or partnership" },

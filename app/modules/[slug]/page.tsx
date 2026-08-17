@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FinalCta } from "@/components/sections/FinalCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PhoneVisual } from "@/components/ui/PhoneVisual";
 import { modules, site } from "@/data/content";
@@ -95,10 +94,6 @@ export default async function ModulePage({ params }: ModulePageProps) {
           </div>
         </div>
       </section>
-      <FinalCta
-        title={`Get updates on ${planningModule.title.toLowerCase()}`}
-        text="Leave your email to follow MRI Plan development and launch availability."
-      />
     </>
   );
 }

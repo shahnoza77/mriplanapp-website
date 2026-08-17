@@ -7,7 +7,7 @@ import { StaggerGroup } from "@/components/motion/StaggerGroup";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact MRI Plan with questions, feedback, support requests, or launch notification interest.",
+  description: "Contact MRI Plan with questions, feedback, or support requests.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
           <Breadcrumbs current="Contact" />
           <Reveal>
             <h1>Get in touch</h1>
-            <p>Questions about MRI Plan, feedback on the concept, or want to be first in line when it launches? Send a message.</p>
+            <p>Questions about MRI Plan, feedback on the concept, or need support? Send a message.</p>
           </Reveal>
         </div>
       </section>

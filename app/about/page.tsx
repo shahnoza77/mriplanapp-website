@@ -36,9 +36,8 @@ export default function AboutPage() {
             </p>
             <h2>Where things stand today</h2>
             <p>
-              MRI Plan is currently in development, with brain, spine, and MSK planning modules being built first. The
-              website exists so students, instructors, and early supporters can follow progress and get notified when the
-              app is available.
+              MRI Plan focuses first on brain, spine, and MSK planning modules. This website gives students, instructors,
+              and MRI professionals a clear view of the product and its learning approach.
             </p>
           </Reveal>
           <StaggerGroup className="insight-list">

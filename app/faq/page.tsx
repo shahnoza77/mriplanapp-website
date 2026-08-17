@@ -5,7 +5,7 @@ import { faqItems } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Answers to common questions about MRI Plan, including who it is for, launch timing, pricing, privacy, and scope.",
+  description: "Answers to common questions about MRI Plan, including who it is for, pricing, privacy, and scope.",
   alternates: { canonical: "/faq" },
 };
 
@@ -27,7 +27,7 @@ export default function FaqPage() {
         <div className="container">
           <Breadcrumbs current="FAQ" />
           <h1>Frequently asked questions</h1>
-          <p>Everything currently confirmed about MRI Plan before launch.</p>
+          <p>Everything currently confirmed about MRI Plan.</p>
         </div>
       </section>
       <section className="section">

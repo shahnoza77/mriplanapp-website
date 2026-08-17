@@ -9,9 +9,6 @@ export function Hero() {
       <div className="hero-orbit" aria-hidden="true" />
       <div className="container wide hero-grid">
         <div className="hero-copy">
-          <Reveal>
-            <span className="hero-badge">Coming soon to the App Store</span>
-          </Reveal>
           <AnimatedHeading as="h1">MRI slice planning  Interactive Simulator.</AnimatedHeading>
           <Reveal delay={0.18}>
             <p>
@@ -21,8 +18,8 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.26}>
             <div className="hero-actions">
-              <Button href="/features" variant="secondary">
-                Explore features
+              <Button href="/features">
+                Explore Features
               </Button>
             </div>
           </Reveal>
