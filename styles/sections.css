@@ -90,9 +90,48 @@
 
 .hero-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-6);
+}
+
+.hero-app-store {
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: 7px;
+}
+
+.hero-app-store img {
+  width: auto;
+  height: 48px;
+}
+
+.hero-app-store:focus-visible {
+  outline: 3px solid var(--color-accent-strong);
+  outline-offset: 4px;
+}
+
+.hero-google-play {
+  display: inline-flex;
+  width: 160px;
+  min-height: 48px;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #b6bec8;
+  border-radius: 7px;
+  background: #e3e8ee;
+  color: #515c6b;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 650;
+  line-height: 1.25;
+  cursor: not-allowed;
+}
+
+.hero-google-play svg {
+  flex-shrink: 0;
 }
 
 .hero-trust {
@@ -617,6 +656,11 @@
 }
 
 @media (max-width: 620px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .module-card {
     display: flex;
   }
