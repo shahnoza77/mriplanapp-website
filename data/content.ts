@@ -2,7 +2,7 @@ import type { ContactTopic, FaqItem, Module, NavItem } from "@/types/content";
 
 export const site = {
   name: "MRI Plan",
-  url: "https://mriplanapp.com",
+  url: "https://www.mriplanapp.com",
   email: "contact@mriplanapp.com",
   description:
     "An interactive MRI slice-planning simulator built to help students and new technologists practice with confidence before scanning real patients.",

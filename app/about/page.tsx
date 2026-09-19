@@ -1,12 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "MRI Plan was created by a practicing MRI technologist to help students practice slice planning outside clinical hours.",
-  alternates: { canonical: "/about" },
+  ...pageMetadata("/about", "About the MRI Training Simulator", "Created by a practicing MRI technologist, MRI Plan helps students and technologists build MRI slice planning skills through repeatable practice outside clinical hours."),
 };
 
 export default function AboutPage() {
@@ -14,7 +13,7 @@ export default function AboutPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <Breadcrumbs current="About" />
+          <Breadcrumbs path="/about" current="About" />
           <Reveal>
             <h1>Built by someone who plans MRI scans every day</h1>
             <p>MRI Plan is designed for MRI students and technologists who already understand MRI physics and cross-sectional anatomy. Its purpose is to develop slice planning skills through interactive practice. The app does not teach MRI physics, anatomy, or identify anatomical structures—it is focused solely on MRI planning techniques.</p>

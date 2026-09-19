@@ -1,19 +1,18 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { site } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "MRI Plan's Privacy Policy, including information collection, patient data, third-party services, and contact details.",
+  ...pageMetadata("/privacy-policy", "Privacy Policy", "MRI Plan's Privacy Policy, including information collection, patient data, third-party services, and contact details."),
   robots: { index: false, follow: true },
-  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <section className="page-hero">
       <div className="container legal-content">
-        <Breadcrumbs current="Privacy Policy" />
+        <Breadcrumbs path="/privacy-policy" current="Privacy Policy" />
         <h1>Privacy Policy</h1>
         <p className="legal-meta">
           <strong>Last Updated:</strong> July 2026

@@ -11,7 +11,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   if (reduceMotion) return <>{children}</>;
 
   return (
-    <motion.div
+    <motion.div data-content-reveal
       key={pathname}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}

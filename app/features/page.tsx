@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 
@@ -5,9 +6,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PhoneVisual } from "@/components/ui/PhoneVisual";
 
 export const metadata: Metadata = {
-  title: "Features",
-  description: "Explore MRI Plan's interactive slice planning, anatomy references, instant feedback, and first learning modules.",
-  alternates: { canonical: "/features" },
+  ...pageMetadata("/features", "MRI Slice Planning Simulator Features", "Explore MRI Plan’s slice positioning, angulation, coverage, and field-of-view planning tools, with teaching notes, anatomy-based views, and immediate feedback."),
 };
 
 export default function FeaturesPage() {
@@ -16,7 +15,7 @@ export default function FeaturesPage() {
       <section className="page-hero">
         <div className="container split-layout">
           <div>
-            <Breadcrumbs current="Features" />
+            <Breadcrumbs path="/features" current="Features" />
             <h1>Everything you need to practice MRI planning</h1>
             <p>
               MRI Plan focuses on the decisions that matter most for early MRI learners: positioning, angling, coverage,

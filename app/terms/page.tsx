@@ -1,19 +1,18 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { site } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "MRI Plan's Terms of Service covering educational purpose, clinical responsibility, liability, and intellectual property.",
+  ...pageMetadata("/terms", "Terms of Service", "MRI Plan's Terms of Service covering educational purpose, clinical responsibility, liability, and intellectual property."),
   robots: { index: false, follow: true },
-  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {
   return (
     <section className="page-hero">
       <div className="container legal-content">
-        <Breadcrumbs current="Terms of Service" />
+        <Breadcrumbs path="/terms" current="Terms of Service" />
         <h1>Terms of Service</h1>
         <p className="legal-meta">
           <strong>Last Updated:</strong> July 2026

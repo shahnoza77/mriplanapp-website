@@ -12,7 +12,7 @@ export function StaggerGroup({ children, className }: { children: ReactNode; cla
   }
 
   return (
-    <motion.div className={className} variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }}>
+    <motion.div data-content-reveal className={className} variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }}>
       {children}
     </motion.div>
   );

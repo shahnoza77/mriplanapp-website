@@ -18,7 +18,7 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
   }
 
   return (
-    <motion.div
+    <motion.div data-content-reveal
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"

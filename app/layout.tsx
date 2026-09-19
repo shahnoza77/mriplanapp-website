@@ -54,6 +54,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={sfPro.variable}>
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": `${site.url}/#website`,
+          url: site.url,
+          name: site.name,
+          inLanguage: "en",
+        }) }} />
+        <noscript>
+          <style>{`
+            [data-content-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+            .accordion-panel { height: auto !important; opacity: 1 !important; visibility: visible !important; padding-bottom: 1.25rem !important; }
+            .accordion-icon { display: none; }
+          `}</style>
+        </noscript>
         <a className="skip-link" href="#main">
           Skip to content
         </a>

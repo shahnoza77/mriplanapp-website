@@ -25,7 +25,7 @@ export function AnimatedHeading({
     <Tag className={className} aria-label={children}>
       {words.map((word, index) => (
         <span className="word-mask" aria-hidden="true" key={`${word}-${index}`}>
-          <motion.span
+          <motion.span data-content-reveal
             initial={{ y: "110%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.78, ease: motionConfig.softEase, delay: 0.12 + index * 0.045 }}

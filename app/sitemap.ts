@@ -1,20 +1,17 @@
 import type { MetadataRoute } from "next";
-import { modules } from "@/data/content";
+import { modules, site } from "@/data/content";
 
-const routes = ["", "/features", "/about", "/faq", "/contact", "/privacy-policy", "/terms"];
+const routes = ["", "/features", "/about", "/faq", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   return [
     ...routes.map((route) => ({
-      url: `https://mriplanapp.com${route}`,
-      lastModified: now,
+      url: `${site.url}${route}`,
       changeFrequency: (route === "" ? "monthly" : "yearly") as "monthly" | "yearly",
       priority: route === "" ? 1 : 0.7,
     })),
     ...modules.map((module) => ({
-      url: `https://mriplanapp.com/modules/${module.slug}`,
-      lastModified: now,
+      url: `${site.url}/modules/${module.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

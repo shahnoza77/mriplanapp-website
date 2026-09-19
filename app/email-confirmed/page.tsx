@@ -1,11 +1,10 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Reveal } from "@/components/motion/Reveal";
 import { EmailConfirmedClient } from "./EmailConfirmedClient";
 
 export const metadata: Metadata = {
-  title: "Email confirmed",
-  description: "Your MRI Plan account email has been verified.",
-  alternates: { canonical: "/email-confirmed" },
+  ...pageMetadata("/email-confirmed", "Email confirmed", "Your MRI Plan account email has been verified."),
   robots: { index: false, follow: false },
 };
 

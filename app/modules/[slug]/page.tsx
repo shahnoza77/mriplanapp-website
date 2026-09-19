@@ -1,8 +1,9 @@
+import { moduleSeo, pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PhoneVisual } from "@/components/ui/PhoneVisual";
-import { modules, site } from "@/data/content";
+import { modules } from "@/data/content";
 
 type ModulePageProps = {
   params: Promise<{ slug: string }>;
@@ -23,11 +24,8 @@ export async function generateMetadata({ params }: ModulePageProps): Promise<Met
   const planningModule = modules.find((item) => item.slug === slug);
   if (!planningModule) return {};
 
-  return {
-    title: planningModule.title,
-    description: planningModule.summary,
-    alternates: { canonical: `/modules/${planningModule.slug}` },
-  };
+  const seo = moduleSeo[slug];
+  return pageMetadata(`/modules/${slug}`, seo.title, seo.description);
 }
 
 export default async function ModulePage({ params }: ModulePageProps) {
@@ -36,25 +34,12 @@ export default async function ModulePage({ params }: ModulePageProps) {
   if (!planningModule) notFound();
   const moduleImage = moduleImages[planningModule.slug];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    name: planningModule.title,
-    description: planningModule.summary,
-    provider: {
-      "@type": "Organization",
-      name: site.name,
-      url: site.url,
-    },
-  };
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <section className="page-hero">
         <div className="container split-layout">
           <div>
-            <Breadcrumbs current={planningModule.title} parent={{ label: "Features", href: "/features" }} />
+            <Breadcrumbs path={`/modules/${planningModule.slug}`} current={planningModule.title} parent={{ label: "Features", href: "/features" }} />
             <span className="eyebrow">{planningModule.eyebrow}</span>
             <h1>{planningModule.title}</h1>
             <p>{planningModule.description}</p>

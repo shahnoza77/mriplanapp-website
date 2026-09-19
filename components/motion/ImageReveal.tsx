@@ -12,7 +12,7 @@ export function ImageReveal({ children, className }: { children: ReactNode; clas
   }
 
   return (
-    <motion.div className={className} variants={clipReveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.24 }}>
+    <motion.div data-content-reveal className={className} variants={clipReveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.24 }}>
       {children}
     </motion.div>
   );

@@ -9,7 +9,7 @@ export function AnimatedNumber({ value }: { value: string }) {
   const reduceMotion = useReducedMotion();
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.8 });
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(value);
 
   useEffect(() => {
     if (!isNumber || reduceMotion || !inView) return;
@@ -17,16 +17,17 @@ export function AnimatedNumber({ value }: { value: string }) {
     const total = 28;
     const tick = () => {
       frame += 1;
-      setCount(Math.round((numeric * frame) / total));
-      if (frame < total) requestAnimationFrame(tick);
+      setCount(String(Math.round((numeric * frame) / total)));
+      if (frame < total) animationFrame = requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+    let animationFrame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animationFrame);
   }, [inView, isNumber, numeric, reduceMotion]);
 
   if (!isNumber || reduceMotion) return <span ref={ref}>{value}</span>;
 
   return (
-    <motion.span ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : { opacity: 0 }}>
+    <motion.span data-content-reveal ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : { opacity: 0 }}>
       {count}
     </motion.span>
   );

@@ -1,3 +1,4 @@
+import { site } from "@/data/content";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mriplanapp.com/sitemap.xml",
+    sitemap: `${site.url}/sitemap.xml`,
   };
 }

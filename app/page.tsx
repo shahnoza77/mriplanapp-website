@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Accordion } from "@/components/ui/Accordion";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
@@ -8,17 +9,19 @@ import { TrustStrip } from "@/components/sections/TrustStrip";
 import { faqItems, site } from "@/data/content";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  ...pageMetadata("/", "MRI Planning Simulator App", "Practice MRI scan planning with MRI Plan, an interactive simulator app for MRI students and technologists. Build slice positioning, angulation, and field-of-view skills."),
 };
 
 export default function HomePage() {
   const appJsonLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
+    "@id": `${site.url}/#app`,
     name: "MRI Plan",
     url: site.url,
     applicationCategory: "EducationalApplication",
-    operatingSystem: "iOS, Android",
+    operatingSystem: "iOS, iPadOS",
+    downloadUrl: "https://apps.apple.com/app/id6787633208",
     description: site.shortDescription,
   };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { FaqItem } from "@/types/content";
 import { motionConfig } from "@/lib/motion";
 
@@ -25,20 +25,21 @@ export function Accordion({ items }: { items: FaqItem[] }) {
               <span>{item.question}</span>
               <span className="accordion-icon" aria-hidden="true" />
             </button>
-            <AnimatePresence initial={false}>
-              {isOpen ? (
-                <motion.div
-                  className="accordion-panel"
-                  id={`faq-panel-${index}`}
-                  initial={reduceMotion ? false : { height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}
-                  transition={{ duration: motionConfig.fast, ease: motionConfig.ease }}
-                >
-                  <p>{item.answer}</p>
-                </motion.div>
-              ) : null}
-            </AnimatePresence>
+            <motion.div
+              className="accordion-panel"
+              id={`faq-panel-${index}`}
+              initial={false}
+              animate={{
+                height: isOpen ? "auto" : 0,
+                opacity: isOpen ? 1 : 0,
+                paddingBottom: isOpen ? "1.25rem" : 0,
+                visibility: "visible",
+                transitionEnd: { visibility: isOpen ? "visible" : "hidden" },
+              }}
+              transition={{ duration: reduceMotion ? 0 : motionConfig.fast, ease: motionConfig.ease }}
+            >
+              <p>{item.answer}</p>
+            </motion.div>
           </div>
         );
       })}

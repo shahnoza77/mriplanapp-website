@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { StoreButtons } from "@/components/ui/StoreButtons";
 import { ContactForm } from "@/components/ui/ContactForm";
@@ -7,9 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact MRI Plan with questions, feedback, or support requests.",
-  alternates: { canonical: "/contact" },
+  ...pageMetadata("/contact", "Contact", "Contact MRI Plan with questions, feedback, or support requests."),
 };
 
 export default function ContactPage() {
@@ -17,7 +16,7 @@ export default function ContactPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <Breadcrumbs current="Contact" />
+          <Breadcrumbs path="/contact" current="Contact" />
           <Reveal>
             <h1>Get in touch</h1>
             <p>Questions about MRI Plan, feedback on the concept, or need support? Send a message.</p>
