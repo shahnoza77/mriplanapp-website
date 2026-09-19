@@ -13,8 +13,9 @@ export function Hero() {
           <AnimatedHeading as="h1">MRI slice planning  Interactive Simulator.</AnimatedHeading>
           <Reveal delay={0.18}>
             <p>
-            MRI Plan is an interactive simulator for practicing slice positioning, angling, and field-of-view decisions
-            across axial, sagittal, and coronal views before scanning real patients.
+              Practice MRI planning on your phone or tablet. MRI Plan is an interactive app that helps you build confidence in slice positioning, angulation, and field of view across axial, sagittal, and coronal views—before scanning real patients.
+              <br />
+              Download on your iPhone or iPad.
             </p>
           </Reveal>
           <Reveal delay={0.26}>
