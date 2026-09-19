@@ -19,7 +19,9 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.26}>
             <div className="hero-actions">
-              <StoreButtons />
+              <div className="hero-store-row">
+                <StoreButtons />
+              </div>
               <Button href="/features">
                 Explore Features
               </Button>

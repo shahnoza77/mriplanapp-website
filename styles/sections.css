@@ -88,17 +88,27 @@
   background: var(--color-lime);
 }
 
-.hero-actions,
+.hero-store-row,
 .contact-downloads {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-3);
+}
+
+.hero-actions {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
   margin-top: var(--space-6);
 }
 
 .contact-downloads {
   justify-content: center;
+  margin-top: var(--space-6);
 }
 
 .hero-app-store {
@@ -661,13 +671,9 @@
 }
 
 @media (max-width: 620px) {
-  .contact-downloads {
+  .contact-downloads,
+  .hero-store-row {
     flex-direction: column;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .module-card {
