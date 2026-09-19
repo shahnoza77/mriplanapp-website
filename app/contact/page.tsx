@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { StoreButtons } from "@/components/ui/StoreButtons";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { site } from "@/data/content";
@@ -41,6 +42,11 @@ export default function ContactPage() {
               <p>MRI Plan is currently a small, early-stage project. Expect a personal reply, typically within a few business days.</p>
             </article>
           </StaggerGroup>
+        </div>
+        <div className="container">
+          <section className="contact-downloads" aria-label="Download MRI Plan">
+            <StoreButtons />
+          </section>
         </div>
       </section>
     </>
