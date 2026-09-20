@@ -156,6 +156,15 @@ export const faqItems: FaqItem[] = [
     question: "How do I get support or report a problem?",
     answer: "Reach out any time at contact@mriplanapp.com or through the contact page.",
   },
+  {
+    question: "How do I delete my MRI Plan account?",
+    answer:
+      "You can permanently delete your MRI Plan account from the app by going to Profile → Account Settings → Delete Account and following the confirmation steps. Deleting your account removes the account information and associated learning data handled by MRI Plan. It does not automatically cancel an active Apple App Store or Google Play subscription. If you cannot access the app, visit our Account Deletion page or email contact@mriplanapp.com from the email address associated with your account.",
+    links: [
+      { label: "Account Deletion page", href: "/delete-account" },
+      { label: "contact@mriplanapp.com", href: "mailto:contact@mriplanapp.com" },
+    ],
+  },
 ];
 
 export const contactTopics: ContactTopic[] = [

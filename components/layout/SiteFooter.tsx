@@ -34,6 +34,9 @@ export function SiteFooter() {
               <li>
                 <Link href="/terms">Terms of Service</Link>
               </li>
+              <li>
+                <Link href="/delete-account">Delete Account</Link>
+              </li>
             </ul>
           </div>
         </div>

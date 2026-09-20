@@ -18,6 +18,7 @@ export type Module = {
 export type FaqItem = {
   question: string;
   answer: string;
+  links?: { label: string; href: string }[];
 };
 
 export type ContactTopic = {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -26,6 +27,11 @@ export default function PrivacyPolicyPage() {
           <li>Learning progress and completed exercises</li>
           <li>Subscription status managed through the Apple App Store or Google Play</li>
         </ul>
+
+        <p>
+          Information about deleting your MRI Plan account and associated data is available on our{" "}
+          <Link href="/delete-account">Account Deletion page</Link>.
+        </p>
 
         <h2>Medical and patient information</h2>
         <p>

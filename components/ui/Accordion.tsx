@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { type ReactNode, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { FaqItem } from "@/types/content";
 import { motionConfig } from "@/lib/motion";
@@ -38,11 +39,27 @@ export function Accordion({ items }: { items: FaqItem[] }) {
               }}
               transition={{ duration: reduceMotion ? 0 : motionConfig.fast, ease: motionConfig.ease }}
             >
-              <p>{item.answer}</p>
+              <p>{renderAnswer(item)}</p>
             </motion.div>
           </div>
         );
       })}
     </div>
   );
+}
+
+function renderAnswer(item: FaqItem): ReactNode[] {
+  let parts: ReactNode[] = [item.answer];
+  for (const link of item.links ?? []) {
+    parts = parts.flatMap<ReactNode>((part, partIndex) =>
+      typeof part === "string"
+        ? part.split(link.label).flatMap((text, index) =>
+            index === 0
+              ? [text]
+              : [<Link key={`${link.href}-${partIndex}-${index}`} href={link.href}>{link.label}</Link>, text],
+          )
+        : [part],
+    );
+  }
+  return parts;
 }
