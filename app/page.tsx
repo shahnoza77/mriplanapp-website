@@ -20,8 +20,11 @@ export default function HomePage() {
     name: "MRI Plan",
     url: site.url,
     applicationCategory: "EducationalApplication",
-    operatingSystem: "iOS, iPadOS",
-    downloadUrl: "https://apps.apple.com/app/id6787633208",
+    operatingSystem: "iOS, iPadOS, Android",
+    downloadUrl: [
+      "https://apps.apple.com/app/id6787633208",
+      "https://play.google.com/store/apps/details?id=com.mriplanapp.mriplan",
+    ],
     description: site.shortDescription,
   };
 

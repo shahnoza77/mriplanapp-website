@@ -175,10 +175,10 @@ Search intent: Account confirmation (noindex).
 
 - Centralized page metadata produces unique titles/descriptions and matching page-specific Open Graph/Twitter metadata, retaining the approved social image.
 - Canonical origin is `https://www.mriplanapp.com`. Sitemap and robots use the same shared origin. Sitemap includes eight indexable pages; privacy, terms, email confirmation and the existing launch redirect are excluded. Removed synthetic build-time lastmod values.
-- MobileApplication has stable `/#app` identity, iOS/iPadOS only and the existing App Store URL. No ratings, prices, publisher claims or Android release invented.
+- MobileApplication has stable `/#app` identity, iOS/iPadOS/Android with the existing App Store URL and the Google Play listing URL. No ratings, prices or publisher claims invented.
 - Added WebSite identity and breadcrumbs matching visible breadcrumb trails. Removed unsupported module Course entities.
 - FAQ JSON-LD covers all nine existing questions and answers verbatim. All FAQ answers are server-rendered, including the four on the homepage. Existing single-open button controls and reduced-motion support remain.
-- Initial counter text is 17, 0, iOS and 7. Animation still runs after hydration; scheduled frames are cancelled on cleanup.
+- Initial counter text is 17, 0, 2 and 7. Animation still runs after hydration; scheduled frames are cancelled on cleanup.
 - No-JavaScript CSS reveals motion-wrapped content and FAQ answers. Normal JavaScript styles and visible copy are retained. Footer navigation already provides server-rendered public-page links.
 
 ## Verification

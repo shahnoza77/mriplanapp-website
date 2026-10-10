@@ -107,7 +107,7 @@ export const processSteps = [
 export const trustMetrics = [
   { value: "17", label: "Core planning modules in development" },
   { value: "0", label: "Patient records or PHI collected" },
-  { value: "iOS", label: "First platform in development" },
+  { value: "2", label: "Platforms available: iOS/iPadOS and Android" },
   { value: "7", label: "Languages supported" },
 ];
 
@@ -135,12 +135,12 @@ export const faqItems: FaqItem[] = [
   {
     question: "When will MRI Plan be available?",
     answer:
-      "MRI Plan availability details will be published on this website.",
+      "MRI Plan is available now on the Apple App Store for iPhone and iPad, and on Google Play for Android.",
   },
   {
     question: "Which platforms will MRI Plan support?",
     answer:
-      "MRI Plan is being built for iOS first, with Android support planned. Current platform availability will be listed on this website.",
+      "MRI Plan is available for iPhone and iPad on the App Store and for Android on Google Play.",
   },
   {
     question: "Will MRI Plan be free?",

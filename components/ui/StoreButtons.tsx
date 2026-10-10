@@ -17,12 +17,20 @@ export function StoreButtons() {
           height={48}
         />
       </a>
-      <button className="hero-google-play" type="button" disabled aria-disabled="true">
-        <svg width="24" height="26" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true">
-          <path d="M2 1.5v23L22 13 2 1.5Z" />
-        </svg>
-        <span>Google Play — Coming Soon</span>
-      </button>
+      <a
+        className="hero-google-play"
+        href="https://play.google.com/store/apps/details?id=com.mriplanapp.mriplan"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get MRI Plan on Google Play"
+      >
+        <Image
+          src="/images/get-it-on-google-play.png"
+          alt="Get it on Google Play"
+          width={186}
+          height={72}
+        />
+      </a>
     </>
   );
 }

@@ -15,7 +15,7 @@ export function Hero() {
             <p>
               Practice MRI planning on your phone or tablet. MRI Plan is an interactive app that helps you build confidence in slice positioning, angulation, and field of view across axial, sagittal, and coronal views—before scanning real patients.
               <br />
-              Download on your iPhone or iPad.
+              Download on your iPhone, iPad, or Android device.
             </p>
           </Reveal>
           <Reveal delay={0.26}>
