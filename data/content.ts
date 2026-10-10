@@ -1,4 +1,4 @@
-import type { ContactTopic, FaqItem, Module, NavItem } from "@/types/content";
+import type { AppVideo, ContactTopic, FaqItem, Module, NavItem } from "@/types/content";
 
 export const site = {
   name: "MRI Plan",
@@ -109,6 +109,24 @@ export const trustMetrics = [
   { value: "0", label: "Patient records or PHI collected" },
   { value: "2", label: "Platforms available: iOS/iPadOS and Android" },
   { value: "7", label: "Languages supported" },
+];
+
+// uploadDate and duration are taken from each video's YouTube watch page metadata.
+export const appVideos: AppVideo[] = [
+  {
+    id: "3JsMxezxqoc",
+    title: "About MRI Plan",
+    description: "A quick introduction to MRI Plan and its interactive learning experience.",
+    uploadDate: "2026-10-01T00:08:32-07:00",
+    duration: "PT2M39S",
+  },
+  {
+    id: "UQW3hSjgOkU",
+    title: "MRI Plan User Guide",
+    description: "Learn how to navigate the app and get started with MRI planning practice.",
+    uploadDate: "2026-09-28T00:00:21-07:00",
+    duration: "PT2M25S",
+  },
 ];
 
 export const faqItems: FaqItem[] = [

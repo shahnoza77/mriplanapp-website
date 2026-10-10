@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/Hero";
 import { ModuleShowcase } from "@/components/sections/ModuleShowcase";
 import { Process } from "@/components/sections/Process";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { VideoShowcase } from "@/components/sections/VideoShowcase";
 import { faqItems, site } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }} />
       <Hero />
+      <VideoShowcase />
       <TrustStrip />
       <FeatureGrid />
       <ModuleShowcase />

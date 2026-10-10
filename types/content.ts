@@ -25,3 +25,11 @@ export type ContactTopic = {
   value: string;
   label: string;
 };
+
+export type AppVideo = {
+  id: string;
+  title: string;
+  description: string;
+  uploadDate: string;
+  duration: string;
+};
