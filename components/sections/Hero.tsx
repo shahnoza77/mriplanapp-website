@@ -28,12 +28,6 @@ export function Hero() {
               </Button>
             </div>
           </Reveal>
-          <Reveal delay={0.34}>
-            <ul className="hero-trust">
-              <li>Classroom-ready direction</li>
-              <li>No patient data collected</li>
-            </ul>
-          </Reveal>
         </div>
         <div className="hero-visual">
           <div className="hero-device-wrap">
