@@ -33,10 +33,10 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }} />
       <Hero />
-      <VideoShowcase />
       <TrustStrip />
       <FeatureGrid />
       <ModuleShowcase />
+      <VideoShowcase />
       <section className="section why-section">
         <div className="container split-layout">
           <div className="section-heading">

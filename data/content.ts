@@ -127,6 +127,11 @@ export const appVideos: AppVideo[] = [
     uploadDate: "2026-09-28T00:00:21-07:00",
     duration: "PT2M25S",
   },
+  {
+    id: "0My0UGBr2eI",
+    title: "MRI Plan in Practice",
+    description: "See more of MRI Plan in this short app demonstration.",
+  },
 ];
 
 export const faqItems: FaqItem[] = [
