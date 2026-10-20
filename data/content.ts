@@ -195,4 +195,5 @@ export const contactTopics: ContactTopic[] = [
   { value: "feedback", label: "Feedback or suggestion" },
   { value: "press", label: "Press or partnership" },
   { value: "support", label: "Support or bug report" },
+  { value: "international-student-discount-inquiry", label: "International Student Discount Inquiry" },
 ];
