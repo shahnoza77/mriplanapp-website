@@ -1,0 +1,128 @@
+.banner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.25rem, 3.5vw, 3rem);
+  border: 1px solid rgba(77, 178, 255, 0.6);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 18% 45%, rgba(28, 140, 255, 0.2), transparent 55%),
+    linear-gradient(125deg, #0c2545, #07172e 65%, #0d2849);
+  box-shadow: inset 0 0 28px rgba(77, 178, 255, 0.06), var(--shadow-glow);
+}
+
+.illustration,
+.content {
+  min-width: 0;
+}
+
+.illustration img {
+  width: 100%;
+  height: auto;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-3);
+  color: var(--color-lime);
+  font-weight: 750;
+  font-size: 0.9rem;
+}
+
+.content h2 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.1;
+  font-weight: 850;
+}
+
+.content h2 span {
+  display: block;
+  color: var(--color-lime);
+  background: linear-gradient(100deg, #c5eaff, #4db2ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  margin-top: var(--space-4);
+  color: #d3e0f0;
+  font-size: 1.05rem;
+}
+
+.discount {
+  margin-top: var(--space-5);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid rgba(127, 199, 255, 0.3);
+  border-radius: var(--radius-md);
+  background: rgba(31, 65, 104, 0.4);
+}
+
+.discount h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.discount svg {
+  color: var(--color-lime);
+}
+
+.discount p {
+  margin-top: var(--space-3);
+  font-size: 0.95rem;
+  color: #d3e0f0;
+}
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  max-width: 100%;
+  min-height: 48px;
+  margin-top: var(--space-5);
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(77, 178, 255, 0.65);
+  border-radius: var(--radius-sm);
+  background: #0a203c;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition: border-color var(--duration-base) var(--ease), box-shadow var(--duration-base) var(--ease);
+}
+
+.contact svg,
+.discount svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.contact:hover,
+.contact:focus-visible {
+  border-color: var(--color-lime);
+  box-shadow: 0 0 22px rgba(77, 178, 255, 0.25);
+}
+
+@media (max-width: 760px) {
+  .banner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .illustration {
+    width: min(100%, 420px);
+    margin-inline: auto;
+  }
+
+  .contact {
+    width: 100%;
+  }
+}

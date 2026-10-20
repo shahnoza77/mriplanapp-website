@@ -7,6 +7,7 @@ import { ModuleShowcase } from "@/components/sections/ModuleShowcase";
 import { Process } from "@/components/sections/Process";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { VideoShowcase } from "@/components/sections/VideoShowcase";
+import { LearningWithoutBorders } from "@/components/sections/LearningWithoutBorders";
 import { faqItems, site } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function HomePage() {
       <FeatureGrid />
       <ModuleShowcase />
       <VideoShowcase />
+      <LearningWithoutBorders />
       <section className="section why-section">
         <div className="container split-layout">
           <div className="section-heading">
