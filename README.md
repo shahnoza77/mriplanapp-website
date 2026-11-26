@@ -90,3 +90,32 @@ Legal pages live in `app/privacy-policy/page.tsx` and `app/terms/page.tsx`.
 - `app/sitemap.ts` and `app/robots.ts` generate deployment-ready SEO files.
 - Typography uses a production-safe system font stack so local and CI builds do not depend on fetching remote font files.
 - Images are served from `public/images` and referenced with Next.js `<Image />` where appropriate.
+
+## Email confirmation (local Phase 1 changes)
+
+`/email-confirmed` treats URL data as untrusted. PKCE codes are handed to
+`com.example.mriplanningapp://auth/email-confirmed` for the mobile SDK to exchange
+using its original verifier. A code by itself never produces a success message.
+Implicit callbacks can display success only after a fresh Supabase `/auth/v1/user`
+response includes `email_confirmed_at`. The page does not persist a browser auth
+session, consume PKCE codes, refresh tokens, or change account records.
+
+The optional implicit-flow check requires these public **build-time** variables:
+
+- `NEXT_PUBLIC_SUPABASE_URL`: the existing MRI Plan Supabase project URL.
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: that project's publishable key. Never
+  use a secret or service-role key.
+
+Without them, implicit callbacks show “We couldn’t check your verification status”
+and still allow a secure handoff to the app. PKCE handoff needs neither variable.
+No environment values or production settings were added by this change.
+
+Run `npm test` with Node 22.18+ (native TypeScript stripping), `npm run lint`,
+and `npx tsc --noEmit`. Tests use fake callback values and mocked network responses;
+they do not send email or access real accounts. Run `npm run build` for the
+production compilation check; this does not deploy.
+
+Before deployment, manually check missing-result, expired/invalid, PKCE, implicit
+success and network-failure states. Verify cold/warm Open MRI Plan handoff on iOS
+and Android using a separately approved test account. Real PKCE links must open
+on the registration device; used/expired links may require signing in manually.

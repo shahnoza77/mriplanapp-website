@@ -4,8 +4,9 @@ import { Reveal } from "@/components/motion/Reveal";
 import { EmailConfirmedClient } from "./EmailConfirmedClient";
 
 export const metadata: Metadata = {
-  ...pageMetadata("/email-confirmed", "Email confirmed", "Your MRI Plan account email has been verified."),
+  ...pageMetadata("/email-confirmed", "Email confirmation", "Check your MRI Plan email confirmation and return to the app."),
   robots: { index: false, follow: false },
+  referrer: "no-referrer",
 };
 
 export default function EmailConfirmedPage() {
@@ -13,12 +14,11 @@ export default function EmailConfirmedPage() {
     <section className="page-hero">
       <div className="container">
         <Reveal>
-          <div className="section-heading center">
-            <span className="eyebrow">Verified</span>
-            <h1>Your email has been verified</h1>
-            <p>Your MRI Plan account is now confirmed. You can return to the MRI Plan app and sign in.</p>
-          </div>
           <EmailConfirmedClient />
+          <noscript>
+            JavaScript is needed to check this confirmation result. Open MRI Plan
+            manually and sign in with the email address you registered.
+          </noscript>
         </Reveal>
       </div>
     </section>

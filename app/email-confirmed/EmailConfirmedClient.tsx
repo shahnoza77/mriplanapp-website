@@ -1,45 +1,48 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
-
-/// Custom URL scheme registered by the MRI Plan iOS/Android app
-/// (see ios/Runner/Info.plist CFBundleURLSchemes) — the same scheme already
-/// used for the working password-recovery deep link
-/// (com.example.mriplanningapp://auth/recovery). A distinct path,
-/// auth/email-confirmed, keeps this callback from ever being mistaken for
-/// a recovery link by the app's own link classifier.
-const APP_SCHEME = "com.example.mriplanningapp";
-const APP_CALLBACK_PATH = "auth/email-confirmed";
-
-/// Builds the deep link the app can act on, forwarding Supabase's own
-/// confirmation params (PKCE `code`, or an implicit-flow `access_token` /
-/// `refresh_token` pair, or an `error`/`error_description`) exactly as
-/// received — never inventing or duplicating token values, and never
-/// logging them.
-function buildAppLink(): string | null {
-  if (typeof window === "undefined") return null;
-  const query = window.location.search; // e.g. "?code=..."
-  const fragment = window.location.hash; // e.g. "#access_token=..."
-  const forwarded = query || fragment;
-  if (!forwarded) return null;
-  return `${APP_SCHEME}://${APP_CALLBACK_PATH}${forwarded}`;
-}
+import {
+  APP_CONFIRMATION_URL, confirmationCopy, parseConfirmation, verifyConfirmation,
+  type ConfirmationResult,
+} from "@/lib/email-confirmation";
 
 export function EmailConfirmedClient() {
-  const [appLink, setAppLink] = useState<string | null>(null);
+  const captured = useRef<ConfirmationResult | null>(null);
+  const [result, setResult] = useState<ConfirmationResult>({
+    status: "checking", appLink: APP_CONFIRMATION_URL,
+  });
 
   useEffect(() => {
-    setAppLink(buildAppLink());
+    let active = true;
+    // Retain the parsed result across React Strict Mode's effect replay.
+    if (!captured.current) {
+      captured.current = parseConfirmation(window.location.search, window.location.hash);
+      // Remove credentials from the address bar/history before any handoff.
+      window.history.replaceState(window.history.state, "", window.location.pathname);
+    }
+    const callback = captured.current;
+    setResult(callback);
+    void verifyConfirmation(callback, {
+      supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+      publishableKey: process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
+    }).then((verified) => { if (active) setResult(verified); });
+    return () => { active = false; };
   }, []);
 
+  const copy = confirmationCopy[result.status];
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Button href={appLink ?? "#"}>Open MRI Plan</Button>
+      <div className="section-heading center" role="status" aria-live="polite">
+        <span className="eyebrow">Email confirmation</span>
+        <h1>{copy.title}</h1>
+        <p>{copy.description}</p>
       </div>
+      <Button href={result.appLink} rel="noreferrer">Open MRI Plan</Button>
       <p style={{ textAlign: "center" }}>
-        Your email has been verified. Open the MRI Plan app and sign in to continue.
+        If the app doesn’t open, open MRI Plan manually on your phone and sign in
+        with the email address you registered. If the link has expired or was
+        already used, signing in will check your current account status.
       </p>
     </div>
   );
